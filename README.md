@@ -29,6 +29,10 @@ Detailed model validation comparing real-world data against predictive trajector
 Built-in testing suite for simulating sensor failures and system communication loss.
 ![Reliability Lab](public/screenshots/reliability_lab.png)
 
+### 4. Physical Hardware Implementation
+The complete IoT circuit setup including ESP8266, DHT-11, Ultrasonic sensor, and Soil Moisture sensors.
+![Physical Setup](public/screenshots/physical_setup.png)
+
 ## 🏗️ System Architecture (FSM)
 
 The system is built on a formal state machine to ensure deterministic behavior and safety.
