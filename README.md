@@ -15,6 +15,20 @@ MicroGreenTwin is a high-reliability Digital Twin platform for automated microgr
 - **Hardware Link**: Production-ready serial interface for ESP8266/ESP32 hardware, implementing high-speed JSON telemetry.
 - **Adaptive Models**: Self-correcting calibration factors that learn from sensor drift over time.
 
+## 🖼️ Visual Showcase
+
+### 1. System Dashboard
+The primary command center showing real-time telemetry and FSM status.
+![System Dashboard](public/screenshots/dashboard_overview.png)
+
+### 2. Adaptive Digital Twin
+Detailed model validation comparing real-world data against predictive trajectories.
+![Adaptive Twin](public/screenshots/adaptive_twin.png)
+
+### 3. Reliability Lab (Fault Injection)
+Built-in testing suite for simulating sensor failures and system communication loss.
+![Reliability Lab](public/screenshots/reliability_lab.png)
+
 ## 🏗️ System Architecture (FSM)
 
 The system is built on a formal state machine to ensure deterministic behavior and safety.
