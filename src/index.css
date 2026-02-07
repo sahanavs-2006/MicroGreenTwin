@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MicroGreenTwin - Industrial IoT Dark Theme */
+
+@layer base {
+  :root {
+    --background: 220 18% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 175 70% 45%;
+    --primary-foreground: 220 18% 8%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 210 15% 55%;
+
+    --accent: 175 50% 30%;
+    --accent-foreground: 210 20% 92%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 20% 98%;
+
+    --warning: 35 92% 50%;
+    --warning-foreground: 220 18% 8%;
+
+    --info: 217 91% 60%;
+    --info-foreground: 210 20% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 175 70% 45%;
+
+    --radius: 0.75rem;
+
+    /* Actuator Colors */
+    --pump: 200 100% 50%;
+    --pump-glow: 200 100% 60%;
+
+    /* Sensor Colors */
+    --moisture: 200 90% 55%;
+    --temperature: 0 85% 60%;
+    --humidity: 260 70% 60%;
+    --water-level: 185 100% 45%;
+
+    /* Glass Effect */
+    --glass-bg: 220 20% 12% / 0.7;
+    --glass-border: 210 20% 92% / 0.1;
+
+    /* State Colors */
+    --state-idle: 220 15% 50%;
+    --state-active: 175 70% 45%;
+    --state-warning: 35 92% 50%;
+    --state-error: 0 84% 60%;
+    --state-success: 142 76% 36%;
+
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 175 70% 45%;
+    --sidebar-primary-foreground: 220 18% 8%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 175 70% 45%;
+  }
+
+  .dark {
+    --background: 220 18% 8%;
+    --foreground: 210 20% 92%;
+    --card: 220 20% 12%;
+    --card-foreground: 210 20% 92%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 175 70% 45%;
+    --primary-foreground: 220 18% 8%;
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 210 20% 92%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 210 15% 55%;
+    --accent: 175 50% 30%;
+    --accent-foreground: 210 20% 92%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 175 70% 45%;
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 175 70% 45%;
+    --sidebar-primary-foreground: 220 18% 8%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 175 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  /* Glass Card Effect */
+  .glass-card {
+    @apply bg-card/70 backdrop-blur-xl border border-white/10 rounded-xl;
+    box-shadow: 
+      0 0 0 1px hsl(var(--glass-border)),
+      0 4px 30px hsl(220 20% 5% / 0.5),
+      inset 0 1px 0 0 hsl(210 20% 92% / 0.05);
+  }
+
+  /* Glowing Ring for Active States */
+  .glow-ring {
+    box-shadow: 
+      0 0 20px hsl(var(--primary) / 0.3),
+      0 0 40px hsl(var(--primary) / 0.1);
+  }
+
+  /* LED Indicator */
+  .led-indicator {
+    @apply relative rounded-full;
+    box-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      inset 0 1px 2px hsl(0 0% 100% / 0.3);
+  }
+
+  /* Data Display */
+  .data-value {
+    @apply font-mono text-2xl font-bold tracking-tight;
+  }
+
+  .data-label {
+    @apply text-xs uppercase tracking-wider text-muted-foreground;
+  }
+
+  /* Gauge Bar */
+  .gauge-bar {
+    @apply h-2 rounded-full bg-muted overflow-hidden;
+  }
+
+  .gauge-fill {
+    @apply h-full rounded-full transition-all duration-500 ease-out;
+  }
+
+  /* State Badge */
+  .state-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider;
+  }
+
+  /* Timeline Node */
+  .timeline-node {
+    @apply relative flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-300;
+  }
+
+  .timeline-node.active {
+    @apply border-primary bg-primary/20;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  /* Pulse Animation for Active Pump */
+  .pump-pulse {
+    animation: pump-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pump-pulse {
+    0%, 100% {
+      box-shadow: 
+        0 0 0 0 hsl(var(--pump) / 0.7),
+        0 0 10px hsl(var(--pump) / 0.5);
+    }
+    50% {
+      box-shadow: 
+        0 0 0 10px hsl(var(--pump) / 0),
+        0 0 20px hsl(var(--pump) / 0.3);
+    }
+  }
+
+  /* Fade In Animation */
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide Up Animation */
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out forwards;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Chart Glow Effect */
+  .chart-glow {
+    filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.3));
+  }
+
+  /* Status Dot */
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .status-dot.online {
+    @apply bg-success;
+    box-shadow: 0 0 8px hsl(var(--success));
+  }
+
+  .status-dot.offline {
+    @apply bg-destructive;
+    box-shadow: 0 0 8px hsl(var(--destructive));
+  }
+
+  .status-dot.warning {
+    @apply bg-warning;
+    box-shadow: 0 0 8px hsl(var(--warning));
+  }
+
+  /* Metric Card Hover */
+  .metric-card {
+    @apply glass-card p-4 transition-all duration-300;
+  }
+
+  .metric-card:hover {
+    @apply border-primary/30;
+    box-shadow: 
+      0 0 0 1px hsl(var(--primary) / 0.2),
+      0 4px 30px hsl(220 20% 5% / 0.5),
+      0 0 30px hsl(var(--primary) / 0.1);
+  }
+}
