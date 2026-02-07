@@ -64,12 +64,17 @@ stateDiagram-v2
    git clone https://github.com/yourusername/MicroGreenTwin.git
    ```
 
-2. Install dependencies:
+2. Navigate to the project directory:
+   ```bash
+   cd MicroGreenTwin
+   ```
+
+3. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Start development server:
+4. Start development server:
    ```bash
    npm run dev
    ```
