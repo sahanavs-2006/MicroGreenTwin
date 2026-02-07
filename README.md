@@ -2,6 +2,8 @@
 
 MicroGreenTwin is a high-reliability Digital Twin platform for automated microgreen farming. It combines real-time IoT telemetry, formal Finite State Machine (FSM) control logic, and predictive biological modeling to ensure optimal growth and system resilience.
 
+**🌐 Live Demo:** [https://sahanavs-2006.github.io/MicroGreenTwin/](https://sahanavs-2006.github.io/MicroGreenTwin/)
+
 ## 🚀 Key Features
 
 - **Digital Twin Integration**: Seamless bidirectional mirroring between physical sensors and the virtual dashboard.
