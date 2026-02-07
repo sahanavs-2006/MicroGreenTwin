@@ -53,8 +53,8 @@ export function ControlPanel({
             <Leaf className="w-5 h-5 text-primary" />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-foreground">MicroGreenTwin</h1>
-            <p className="text-xs text-muted-foreground font-mono">Automated FSM Control System</p>
+            <h1 className="text-lg font-bold text-foreground">Applied Digital Logic Design</h1>
+            <p className="text-xs text-muted-foreground font-mono">Computer Organization - FSM Control</p>
           </div>
           {hardwareConnected && (
             <Badge variant="outline" className="bg-success/10 text-success border-success/30 gap-1">

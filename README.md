@@ -1,4 +1,4 @@
-# MicroGreenTwin - Smart Microgreens Automation 🪴
+# Applied Digital Logic Design and Computer Organization 🪴
 
 MicroGreenTwin is a high-reliability Digital Twin platform for automated microgreen farming. It combines real-time IoT telemetry, formal Finite State Machine (FSM) control logic, and predictive biological modeling to ensure optimal growth and system resilience.
 
